@@ -4,15 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Официальный сайт компании Smart Device - производство и монтаж печатных плат">
+    <meta name="description" content="Официальный сайт компании Smart Device - производство и монтаж печатных плат" />
     <title>Smart Device</title>
+    <link rel="preload" href="fonts/RobotoCondensed-Bold.woff" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/RobotoCondensed-Regular.woff" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
         <div class="header__container container">
-          <a class="header__logo logo">
+          <a class="header__logo logo logo--header">
             <picture>
               <source media="(max-width: 767.98px)" srcset="img/svg/logo-mobile.svg">
               <img src="img/svg/logo-desktop.svg" alt="Smart Device: умные технологии" loading="lazy" width="215" height="55">
@@ -22,11 +26,17 @@
             <ul class="contact__list">
               <li class="contact__item">
                 <a href="mailto:info@sd.ru" class="contact__link contact__link--email" aria-label="Email">
+                  <svg width="20" height="20" viewbox="0 0 20 20" role="img" aria-label="Фейсбук" focusable="false">
+                    <use xlink:href="img/sprite_auto.svg#icon-email"></use>
+                  </svg>
                   <span>info@sd.ru</span>
                 </a>
               </li>
               <li class="contact__item">
                 <a href="tel:+74950005252" class="contact__link contact__link--phone" aria-label="Телефон">
+                  <svg width="20" height="20" viewbox="0 0 20 20" role="img" aria-label="Фейсбук" focusable="false">
+                    <use xlink:href="img/sprite_auto.svg#icon-phone-call"></use>
+                  </svg>
                   <span>+7 (495) 000 52 52</span>
                 </a>
               </li>
@@ -47,8 +57,65 @@
           </div>
         </section>
       </main>
-      <footer>
-        <div class="container"></div>
+      <footer class="footer">
+        <div class="footer__container footer__spollers container" data-spollers="767.98, max" data-one-spoller>
+          <div class="footer__column footer__column--1">
+            <a class="footer__logo logo logo--footer">
+              <img src="img/svg/logo-desktop.svg" alt="Smart Device: умные технологии" loading="lazy" width="215" height="55">
+            </a>
+            <div class="footer__social social">
+              <h2 class="visually-hidden">Мы в соцсетях</h2>
+              <ul class="social__list">
+                <li class="social__item">
+                  <a href="#" class="social__link">
+                    <svg class="social__icon social__icon--facebook" width="30" height="30" viewbox="0 0 30 30" role="img" aria-label="Фейсбук" focusable="false">
+                      <use xlink:href="img/sprite_auto.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="#" class="social__link">
+                    <svg class="social__icon social__icon--odnoklassniki" width="30" height="30" viewbox="0 0 30 30" role="img" aria-label="Одноклассники" focusable="false">
+                      <use xlink:href="img/sprite_auto.svg#icon-odnoklassniki"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a href="#" class="social__link">
+                    <svg class="social__icon social__icon--vkontakte" width="30" height="30" viewbox="0 0 30 30" role="img" aria-label="Вконтакте" focusable="false">
+                      <use xlink:href="img/sprite_auto.svg#icon-vkontakte"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__column footer__column--2">
+            <button type="button" tabindex="-1" data-spoller>Разделы сайта</button>
+            <nav class="footer__text">
+              <ul>
+                <li><a href="#">О Компаниии</a></li>
+                <li><a href="#">Продукты</a></li>
+                <li><a href="#">Производство печатных плат</a></li>
+                <li><a href="#">Монтаж печатных плат</a></li>
+                <li><a href="#">Комплектующие</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__column footer__column--3">
+            <button type="button" tabindex="-1" data-spoller>Наш офис</button>
+            <div class="footer__text">
+              <p>г. Мытищи, Олимпийский проспект, д.10</p>
+              <ul>
+                <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
+                <li><a href="tel:+79253895829">+7 (925) 389-58-29</a></li>
+                <li><a href="tel:+79253647813">+7 (925) 364-78-13</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
 

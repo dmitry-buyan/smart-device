@@ -1,0 +1,278 @@
+.footer {
+  padding: 50px 0 55px 0;
+  background-color: $color-black-pearl;
+
+  @include vp-1023 {
+    padding: 50px 0 65px 0;
+  }
+
+  @include vp-767 {
+    padding: 35px 0;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 30px;
+}
+
+.footer__spollers {
+  [data-spoller] {
+    margin: 0 0 20px 0;
+    padding: 0 0 0 0;
+    font-family: $ff-roboto;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: $color-default-white;
+    text-align: left;
+    border: none;
+    background-color: $color-transparent;
+    text-transform: uppercase;
+
+    @include vp-767 {
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.footer__spollers._init {
+  [data-spoller] {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    padding: 22px 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 1px;
+      top: 27px;
+      right: 0;
+      background-color: $color-alice-blue;
+      transition: transform $trans-default;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+
+  [data-spoller]._active {
+    margin: 0;
+
+    &::after {
+      transform: rotate(0deg);
+    }
+  }
+
+  .footer__text {
+    margin: -5px 0 0 0;
+    padding: 0 0 14px 0;
+  }
+}
+
+.footer__column {
+  &--1 {
+    position: relative;
+
+    @include vp-1023 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 0 35px 0;
+    }
+
+    @include vp-767 {
+      padding: 0 0 30px 0;
+      flex-direction: column;
+      align-items: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        width: 1000%;
+        height: 1px;
+        background-color: $color-default-white;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &--2 {
+    position: relative;
+    width: 470px;
+    padding: 7px 0 0 0;
+    margin: 0 0 0 130px;
+
+    @include vp-1023 {
+      width: 220px;
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+
+    @include vp-767 {
+      width: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        width: 1000%;
+        height: 1px;
+        background-color: $color-default-white;
+        opacity: 0.7;
+      }
+    }
+
+    a {
+      color: $color-default-white;
+      opacity: 0.7;
+      transition: opacity $trans-default;
+
+      @include vp-767 {
+        font-size: 14px;
+        line-height: 25px;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+
+    ul {
+      column-count: 2;
+      column-gap: 30px;
+      margin: 0;
+
+      @include vp-1023 {
+        column-count: unset;
+      }
+    }
+
+    li {
+      &:not(:last-child) {
+        margin: 0 0 10px 0;
+
+        @include vp-1023 {
+          margin: 0 0 8px 0;
+        }
+      }
+    }
+  }
+
+  &--3 {
+    position: relative;
+    width: 345px;
+    padding: 7px 0 0 0;
+
+    @include vp-1023 {
+      width: 320px;
+      padding: 0 0 0 0;
+    }
+
+    @include vp-767 {
+      width: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        width: 1000%;
+        height: 1px;
+        background-color: $color-default-white;
+        opacity: 0.7;
+      }
+    }
+
+    a {
+      color: $color-default-white;
+      opacity: 0.7;
+      white-space: nowrap;
+      transition: opacity $trans-default;
+
+      @include vp-767 {
+        font-size: 14px;
+        line-height: 25px;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        margin: 0 0 10px 0;
+
+        @include vp-767 {
+          margin: 0 0 15px 0;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      &:not(:last-child) {
+        margin: 0 0 8px 0;
+
+        @include vp-767 {
+          margin: 0 0 6px 0;
+        }
+      }
+    }
+  }
+}
+
+.footer__logo {
+  display: block;
+  margin: 0 0 35px 0;
+  flex: 0 0 auto;
+
+  @include vp-1023 {
+    margin: 0 0 0 0;
+  }
+
+  @include vp-767 {
+    margin: 0 0 20px -5px;
+  }
+}
+
+.footer__social {
+  @include vp-1023 {
+    margin: 10px 0 0 0;
+  }
+
+  @include vp-767 {
+    margin: 0 0 0 5px;
+    align-self: center;
+  }
+}
