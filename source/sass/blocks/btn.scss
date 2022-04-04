@@ -23,6 +23,7 @@
 
   &--blue {
     font-size: 18px;
+    line-height: 21px;
     background-color: $color-deep-sky-blue;
   }
 
@@ -43,5 +44,19 @@
     &:focus {
       opacity: 0.8;
     }
+  }
+}
+
+.btn__desktop {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.btn__mobile {
+  display: none;
+
+  @include vp-767 {
+    display: inline;
   }
 }
