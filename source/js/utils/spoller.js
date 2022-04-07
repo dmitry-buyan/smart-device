@@ -5,7 +5,12 @@ export const initSpoller = () => {
     const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._active');
     if (spollerActiveTitle) {
       spollerActiveTitle.classList.remove('_active');
-      _slideUp(spollerActiveTitle.nextElementSibling, 500);
+      if (spollerActiveTitle.nextElementSibling) {
+        _slideUp(spollerActiveTitle.nextElementSibling, 500);
+
+      } else {
+        _slideUp(spollerActiveTitle.previousElementSibling, 500);
+      }
     }
   };
 
@@ -20,7 +25,11 @@ export const initSpoller = () => {
           hideSpollersBody(spollersBlock);
         }
         spollerTitle.classList.toggle('_active');
-        _slideToggle(spollerTitle.nextElementSibling, 500);
+        if (spollerTitle.nextElementSibling) {
+          _slideToggle(spollerTitle.nextElementSibling, 500);
+        } else {
+          _slideToggle(spollerTitle.previousElementSibling, 500);
+        }
       }
       evt.preventDefault();
     }
@@ -34,11 +43,19 @@ export const initSpoller = () => {
         if (hideSpollerBody) {
           spollerTitle.removeAttribute('tabindex');
           if (!spollerTitle.classList.contains('_active')) {
-            spollerTitle.nextElementSibling.hidden = true;
+            if (spollerTitle.nextElementSibling) {
+              spollerTitle.nextElementSibling.hidden = true;
+            } else {
+              spollerTitle.previousElementSibling.hidden = true;
+            }
           }
         } else {
           spollerTitle.setAttribute('tabindex', '-1');
-          spollerTitle.nextElementSibling.hidden = false;
+          if (spollerTitle.nextElementSibling) {
+            spollerTitle.nextElementSibling.hidden = false;
+          } else {
+            spollerTitle.previousElementSibling.hidden = false;
+          }
         }
       });
     }

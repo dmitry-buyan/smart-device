@@ -1,0 +1,124 @@
+.info {
+  padding: 120px 0 100px 0;
+
+  @include vp-1023 {
+    padding: 75px 0 80px 0;
+  }
+
+  @include vp-767 {
+    padding: 50px 0 80px 0;
+  }
+
+  h2 {
+    margin: 0 0 13px 0;
+    font-family: $ff-roboto;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+
+    @include vp-1023 {
+      margin: 0 0 10px 0;
+    }
+
+    @include vp-767 {
+      font-size: 28px;
+      line-height: 39px;
+    }
+  }
+
+  p {
+    margin: 0 0 0 0;
+
+    &:not(:last-child) {
+      margin: 0 0 20px 0;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
+
+.info__body {
+  position: relative;
+  min-height: 320px;
+  padding: 0 0 0 250px;
+
+  @include vp-1023 {
+    padding: 0 0 0 175px;
+  }
+
+  @include vp-767 {
+    padding: 0 0 0 0;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 320px;
+    background: url("../img/2022.webp") no-repeat center / cover;
+
+    @include vp-1023 {
+      top: 4px;
+      left: -4px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+}
+
+.info__content {
+  .btn {
+    display: none;
+  }
+}
+
+.info__content._init {
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 180px;
+    margin: 20px 0 0 0;
+    padding: 14px 25px;
+
+    @include vp-1023 {
+      margin: 0 0 0 0;
+    }
+
+    @include vp-767 {
+      min-width: 160px;
+      padding: 8px 25px 9px;
+    }
+
+    &::before {
+      position: relative;
+      content: "Подробнее";
+    }
+  }
+
+  .btn._active {
+    @include vp-1023 {
+      margin: 15px 0 0 0;
+    }
+
+    &::before {
+      content: "Свернуть";
+    }
+  }
+}
+
+.info__top {
+  p:last-child {
+    margin: 0 0 20px 0;
+
+    @include vp-1023 {
+      margin: 0 0 15px 0;
+    }
+  }
+}

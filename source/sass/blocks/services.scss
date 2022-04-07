@@ -1,0 +1,154 @@
+.services {
+  padding: 70px 0 140px 0;
+  background-color: $color-black-pearl;
+
+  @include vp-1023 {
+    padding: 55px 0 75px 0;
+  }
+
+  @include vp-767 {
+    padding: 50px 0 85px 0;
+  }
+
+  h2 {
+    margin: 0 0 50px 0;
+    font-family: $ff-roboto;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+    color: $color-default-white;
+
+    @include vp-1023 {
+      margin: 0 0 38px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 30px 0;
+      font-size: 28px;
+      line-height: 39px;
+    }
+  }
+}
+
+.services__title {
+  h3 {
+    display: none;
+  }
+
+  @include vp-767 {
+    h2 {
+      display: none;
+    }
+
+    h3 {
+      display: block;
+      max-width: 200px;
+      margin: 0 0 25px 0;
+      font-family: $ff-roboto;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 39px;
+      color: $color-default-white;
+    }
+  }
+}
+
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px 85px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(auto-fill, minmax(670px, 1fr));
+    row-gap: 30px;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0;
+  }
+}
+
+.services__item {
+  list-style: none;
+  justify-self: center;
+
+  @include vp-767 {
+    &:not(:last-child) {
+      margin: 0 0 30px 0;
+    }
+  }
+}
+
+.services__card {
+  position: relative;
+  display: block;
+
+  h3 {
+    position: absolute;
+    z-index: 100;
+    top: 50px;
+    left: 40px;
+    max-width: 170px;
+    margin: 0 0 0 0;
+    font-weight: 400;
+    font-family: $ff-roboto;
+    font-size: 20px;
+    line-height: 30px;
+    color: $color-default-white;
+
+    @include vp-1023 {
+      max-width: 150px;
+      top: 37px;
+      left: 45px;
+    }
+
+    @include vp-767 {
+      max-width: 135px;
+      top: 27px;
+      left: 30px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-black-pearl;
+    opacity: 0.5;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 1px;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px 0 0 0;
+    background: $color-deep-sky-blue url("../img/sprite/arrow.svg") no-repeat center;
+
+    @include vp-1023 {
+      right: 0;
+    }
+
+    @include vp-767 {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
