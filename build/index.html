@@ -228,17 +228,6 @@
             </div>
           </div>
         </section>
-
-        <section>
-          <div class="container">
-            <h1>Заголовок</h1>
-            <p>На данной странице показан пример модальных окон.</p>
-            <p>Перед началом разработки не забудте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-            <p><a class="btn btn--dark" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn btn--blue" href="#" data-open-modal="success">modal--success link</a></p>
-            <p><a class="btn btn--light" href="#" data-open-modal="success">modal--success link</a></p>
-          </div>
-        </section>
       </main>
       <footer class="footer">
         <div class="footer__container footer__spollers container" data-spollers="767.98, max" data-one-spoller>
@@ -307,9 +296,41 @@
       <div class="modal__wrapper">
         <div class="modal__overlay" data-close-modal></div>
         <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
+          <div class="form-feedback">
+            <h2>Закажите звонок</h2>
+            <p>Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</p>
+            <form action="#" method="post">
+              <div class="form-feedback__row">
+                <div class="form-feedback__column">
+                  <label><input type="text" name="name" placeholder="Имя" required></label>
+                </div>
+                <div class="form-feedback__column">
+                  <label><input data-user-phone type="tel" name="phone" placeholder="Телефон" minlength="16" maxlength="16" required></label>
+                </div>
+              </div>
+
+              <div class="form-feedback__row">
+                <div class="form-feedback__column form-feedback__column--full">
+                  <label><textarea name="text" cols="30" rows="10" placeholder="Ваш вопрос"></textarea></label>
+                </div>
+              </div>
+
+              <div class="form-feedback__row form-feedback__row--bottom">
+                <div class="form-feedback__column form-feedback__column--agreement">
+                  <label>
+                    <input type="checkbox" name="personal-data" value="agreed" required checked>
+                    <span class="form-feedback__checkmark"></span>
+                    <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
+                  </label>
+                </div>
+                <div class="form-feedback__column">
+                  <button class="btn btn--dark form-feedback__btn" type="submit">Отправить</button>
+                </div>
+              </div>
+            </form>
+          </div>
           <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
+            <svg width="20" height="20">
               <use xlink:href="img/sprite_auto.svg#icon-close"></use>
             </svg>
           </button>
