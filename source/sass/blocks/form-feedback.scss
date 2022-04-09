@@ -1,0 +1,224 @@
+.form-feedback {
+  color: $color-default-white;
+
+  h2 {
+    font-family: $ff-roboto;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+    color: inherit;
+
+    @include vp-767 {
+      font-size: 30px;
+      line-height: 42px;
+    }
+
+    &:not(:last-child) {
+      margin: 0 0 12px 0;
+
+      @include vp-1023 {
+        margin: 0 0 7px 0;
+      }
+    }
+  }
+
+  p {
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &:not(:last-child) {
+      margin: 0 0 35px 0;
+
+      @include vp-1023 {
+        margin: 0 0 25px 0;
+      }
+
+      @include vp-767 {
+        margin: 0 0 33px 0;
+      }
+    }
+  }
+}
+
+.form-feedback__row {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+
+  &:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  &--bottom {
+    margin: 35px 0 0 0;
+    flex-direction: row-reverse;
+    column-gap: 50px;
+
+    @include vp-1023 {
+      column-gap: 85px;
+    }
+
+    @include vp-767 {
+      flex-direction: column-reverse;
+      margin: 30px 0 0 0;
+    }
+
+    label {
+      position: relative;
+      padding-left: 25px;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+
+      input:checked ~ .form-feedback__checkmark::after {
+        display: block;
+      }
+
+      input[type="checkbox"]:focus + .form-feedback__checkmark {
+        outline: 2px solid #ffa500ff;
+      }
+
+      &:hover {
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 16px;
+      color: $color-default-white;
+      opacity: 0.8;
+    }
+  }
+}
+
+.form-feedback__column {
+  display: flex;
+  flex: 1 1 auto;
+
+  @include vp-767 {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .form-feedback__row--bottom & {
+    flex: 0 1 auto;
+    align-self: flex-end;
+
+    @include vp-1023 {
+      align-self: center;
+    }
+
+    @include vp-767 {
+      &--agreement {
+        margin: 24px 0 0 10px;
+      }
+    }
+  }
+
+  label,
+  input,
+  textarea {
+    display: flex;
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    line-height: 1em;
+    color: $color-default-white;
+    border: none;
+    border-radius: 3px;
+    background: rgba(4, 20, 39, 0.15);
+  }
+
+  input {
+    padding: 16px 15px;
+  }
+
+  textarea {
+    height: 155px;
+    padding: 25px 15px;
+
+    @include vp-1023 {
+      padding: 33px 15px 15px 15px;
+    }
+
+    @include vp-767 {
+      height: 180px;
+      padding: 25px 15px;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-weight: inherit;
+    font-size: inherit;
+    color: $color-default-white;
+    transition: opacity $trans-default;
+  }
+
+  input:hover::placeholder,
+  input:focus::placeholder,
+  textarea:hover::placeholder {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    opacity: 0.7;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}
+
+.form-feedback__checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $color-default-white;
+  border-radius: 2px;
+  background-color: $color-transparent;
+  transform: translate(0, -50%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    background: $color-transparent url("../img/checkbox-tick.svg") no-repeat center;
+  }
+}
+
+.form-feedback__btn {
+  min-width: 265px;
+  padding: 15px 15px 12px 15px;
+  justify-content: center;
+
+  @include vp-767 {
+    min-width: unset;
+    width: 100%;
+    max-width: 100%;
+  }
+}
