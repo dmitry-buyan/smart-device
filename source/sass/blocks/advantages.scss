@@ -24,20 +24,20 @@
   box-sizing: border-box;
   position: relative;
   min-height: 300px;
-  padding: 95px 40px 35px 45px;
+  padding: 40px 40px 35px 45px;
   border: 1px solid $color-whisper;
   border-left: none;
 
   @include vp-1023 {
     min-height: 360px;
     min-width: 320px;
-    padding: 90px 30px 27px 45px;
+    padding: 37px 30px 27px 45px;
   }
 
   @include vp-767 {
     min-width: 270px;
     min-height: 340px;
-    padding: 77px 40px 27px 30px;
+    padding: 30px 40px 27px 30px;
   }
 
   &::before {
@@ -48,23 +48,6 @@
     bottom: -1px;
     width: 5px;
     background-color: $color-deep-sky-blue;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: 35px;
-    height: 35px;
-    top: 40px;
-    left: 45px;
-
-    @include vp-767 {
-      width: 30px;
-      height: 30px;
-      top: 30px;
-      left: 30px;
-      background-size: contain;
-    }
   }
 
   h3 {
@@ -103,43 +86,36 @@
     }
   }
 
-  &--1 {
+  &:hover {
     color: $color-alice-blue;
     background-color: $color-deep-sky-blue;
-    border: none;
+    border-color: $color-deep-sky-blue;
+
+    h3,
+    p,
+    svg use {
+      color: inherit;
+    }
 
     &::before {
       display: none;
     }
+  }
+}
 
-    &::after {
-      background: $color-transparent url("../img/sprite/icon-stopwatch.svg") no-repeat center;
-    }
+.advantages__icon {
+  margin: 0 0 15px 0;
 
-    h3 {
-      color: inherit;
-    }
-
-    p {
-      color: inherit;
-    }
+  @include vp-1023 {
+    margin: 0 0 10px 0;
   }
 
-  &--2 {
-    &::after {
-      background: $color-transparent url("../img/sprite/icon-hired.svg") no-repeat center;
-    }
+  @include vp-767 {
+    width: 30px;
+    height: 30px;
   }
 
-  &--3 {
-    &::after {
-      background: $color-transparent url("../img/sprite/icon-detective.svg") no-repeat center;
-    }
-  }
-
-  &--4 {
-    &::after {
-      background: $color-transparent url("../img/sprite/icon-tag.svg") no-repeat center;
-    }
+  use {
+    color: $color-deep-sky-blue;
   }
 }
