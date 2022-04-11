@@ -672,7 +672,7 @@ button,
   pointer-events: none;
 }
 
-.btn__mobile {
+[data-btn-mobile] {
   display: none;
 }
 
@@ -1963,11 +1963,11 @@ button,
     padding: 0 25px;
   }
 
-  .btn__desktop {
+  [data-btn-desktop] {
     display: none;
   }
 
-  .btn__mobile {
+  [data-btn-mobile] {
     display: inline;
   }
 

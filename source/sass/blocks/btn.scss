@@ -48,13 +48,13 @@
   }
 }
 
-.btn__desktop {
+[data-btn-desktop] {
   @include vp-767 {
     display: none;
   }
 }
 
-.btn__mobile {
+[data-btn-mobile] {
   display: none;
 
   @include vp-767 {
