@@ -10,7 +10,7 @@
     <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/RobotoCondensed-Regular.woff" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" as="image" href="img/main-mobile@2x.webp">
+    <link rel="preload" href="img/main-mobile@2x.webp" as="image">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
@@ -312,10 +312,10 @@
           <div class="form-feedback">
             <h2>Закажите звонок</h2>
             <p>Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</p>
-            <form action="#" method="post">
+            <form action="https://echo.htmlacademy.ru/" method="post" autocomplete="off">
               <div class="form-feedback__row">
                 <div class="form-feedback__column">
-                  <label><input type="text" name="name" placeholder="Имя" required></label>
+                  <label><input data-focus type="text" name="name" placeholder="Имя" required></label>
                 </div>
                 <div class="form-feedback__column">
                   <label><input data-user-phone type="tel" name="phone" placeholder="Телефон" minlength="16" maxlength="16" required></label>
@@ -344,20 +344,6 @@
           </div>
           <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
             <svg width="20" height="20">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
               <use xlink:href="img/sprite_auto.svg#icon-close"></use>
             </svg>
           </button>

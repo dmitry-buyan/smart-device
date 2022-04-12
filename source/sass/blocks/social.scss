@@ -1,7 +1,11 @@
 .social__list {
   display: flex;
-  margin: 0 0 0 15px;
+  margin: 0 0 0 10px;
   padding: 5px;
+
+  @include vp-1023 {
+    margin: 0 -5px 0 0;
+  }
 
   @include vp-767 {
     margin: 0 0 0 0;
@@ -12,12 +16,13 @@
   display: inline-flex;
 
   &:not(:last-child) {
-    margin: 0 25px 0 0;
+    margin: 0 15px 0 0;
   }
 }
 
 .social__link {
   display: inline-flex;
+  padding: 5px;
   transition: opacity $trans-default;
 
   &:hover,

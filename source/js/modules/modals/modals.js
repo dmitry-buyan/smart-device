@@ -133,6 +133,10 @@ export class Modals {
     });
   }
 
+  _autoFocus(modal) {
+    modal.querySelector('[data-focus]').focus();
+  }
+
   open(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
 
@@ -164,9 +168,13 @@ export class Modals {
       this._focusLock.lock('.modal.is-active', this._startFocus);
     }
 
+    // const modalInput = modal.querySelector('[data-focus]');
+
+
     setTimeout(() => {
       this._addListeners(modal);
       this._autoPlay(modal);
+      this._autoFocus(modal);
       document.addEventListener('click', this._documentClickHandler);
     }, this._eventTimeout);
   }
